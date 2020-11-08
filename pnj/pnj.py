@@ -7,41 +7,41 @@ from collections import OrderedDict as OD
 class Pnj():
     def __init__(self, type):
         self.type = type
-        with open("./pnj/caracs.yaml", 'r') as f:
+        with open("./pnj/caracs.yaml", 'r', encoding='utf-8') as f:
             self.Caracs = yaml.load(f, Loader=yaml.FullLoader)
-        self.name = choice(self.Caracs[self.type]['name'])   #Faire en sorte qu'il n'y ait pas le même nom
-        self.life = randint(self.Caracs[self.type]["life"]['min'], self.Caracs[self.type]["life"]['max'])
-        self.strength = randint(self.Caracs[self.type]["strength"]['min'], self.Caracs[self.type]["strength"]['max'])
-        self.stamina = randint(self.Caracs[self.type]["stamina"]['min'], self.Caracs[self.type]["stamina"]['max'])
-        self.dexterity = randint(self.Caracs[self.type]["dexterity"]['min'], self.Caracs[self.type]["dexterity"]['max'])
+        self.name = choice(self.Caracs[self.type]['prénom']) + ' ' + choice(self.Caracs[self.type]['nom'])  #Faire en sorte qu'il n'y ait pas le même nom
+        self.vie = randint(self.Caracs[self.type]["vie"]['min'], self.Caracs[self.type]["vie"]['max'])
+        self.force = randint(self.Caracs[self.type]["force"]['min'], self.Caracs[self.type]["force"]['max'])
+        self.endurance = randint(self.Caracs[self.type]["endurance"]['min'], self.Caracs[self.type]["endurance"]['max'])
+        self.dexterite = randint(self.Caracs[self.type]["dextérité"]['min'], self.Caracs[self.type]["dextérité"]['max'])
         self.perception = randint(self.Caracs[self.type]["perception"]['min'], self.Caracs[self.type]["perception"]['max'])
-        self.knowledge = randint(self.Caracs[self.type]["knowledge"]['min'], self.Caracs[self.type]["knowledge"]['max'])
-        self.sanity = randint(self.Caracs[self.type]["sanity"]['min'], self.Caracs[self.type]["sanity"]['max'])
-        self.power = randint(self.Caracs[self.type]["power"]['min'], self.Caracs[self.type]["power"]['max'])
-        self.stealth = randint(self.Caracs[self.type]["stealth"]['min'], self.Caracs[self.type]["stealth"]['max'])
-        self.charisma = randint(self.Caracs[self.type]["charisma"]['min'], self.Caracs[self.type]["charisma"]['max'])
-        self.steering = randint(self.Caracs[self.type]["steering"]['min'], self.Caracs[self.type]["steering"]['max'])
-        self.craft = randint(self.Caracs[self.type]["craft"]['min'], self.Caracs[self.type]["craft"]['max'])
+        self.savoir = randint(self.Caracs[self.type]["savoir"]['min'], self.Caracs[self.type]["savoir"]['max'])
+        self.santementale = randint(self.Caracs[self.type]["santé mentale"]['min'], self.Caracs[self.type]["santé mentale"]['max'])
+        self.pouvoir = randint(self.Caracs[self.type]["pouvoir"]['min'], self.Caracs[self.type]["pouvoir"]['max'])
+        self.discretion = randint(self.Caracs[self.type]["discrétion"]['min'], self.Caracs[self.type]["discrétion"]['max'])
+        self.charisme = randint(self.Caracs[self.type]["charisme"]['min'], self.Caracs[self.type]["charisme"]['max'])
+        self.pilotage = randint(self.Caracs[self.type]["pilotage"]['min'], self.Caracs[self.type]["pilotage"]['max'])
+        self.artisanat = randint(self.Caracs[self.type]["artisanat"]['min'], self.Caracs[self.type]["artisanat"]['max'])
         self.items = self.Caracs[self.type]['loot']
 
-        self.equipment = {}
+        self.equipement = {}
 
         self.loot = {}
 
-    def Equip(self):
+    def Equiper(self):
         for it in self.items:
             n = randint(1, 100)
             if n < self.items[it]:
                 item = Item(it)
-                self.equipment[it] = item
+                self.equipement[it] = item
 
-    def Loot(self):
-        return self.equipment
+    def Looter(self):
+        return self.equipement
 
-    def DisplayCaracs(self):
-        d = OD([('Nom', self.name), ('Vie', self.life), ('Force', self.strength), ('Endurance', self.stamina),
-             ('Dextérité', self.dexterity), ('Perception', self.perception), ('Savoir', self.knowledge),
-             ('Santé mentale', self.sanity), ('Pouvoir', self.power), ('Discrétion', self.stealth),
-             ('Charisme', self.charisma), ('Pilotage', self.steering), ('Artisanat', self.craft),
-             ('Équipement', self.equipment)])
+    def AfficherCaracs(self):
+        d = OD([('Nom', self.name), ('Vie', self.vie), ('Force', self.force), ('Endurance', self.endurance),
+             ('Dextérité', self.dexterite), ('Perception', self.perception), ('Savoir', self.savoir),
+             ('Santé mentale', self.santementale), ('Pouvoir', self.pouvoir), ('Discrétion', self.discretion),
+             ('Charisme', self.charisme), ('Pilotage', self.pilotage), ('Artisanat', self.artisanat),
+             ('Équipement', self.equipement)])
         return d

@@ -1,28 +1,30 @@
 Paysan:
-  name: ['Ropartz', 'Guetenot', 'Gerard', 'Masturbin']
+  prénom: ['Ropartz', 'Guetenot', 'Gerard', 'Masturbin']
 
-  life: {min: 6, max: 8}
+  nom: ['Barbak', 'Maurice', 'Bouseux', 'Pâté']
 
-  strength: {min: 35, max: 45}
+  vie: {min: 6, max: 8}
 
-  stamina: {min: 40, max: 50}
+  force: {min: 35, max: 45}
 
-  dexterity: {min: 20, max: 25}
+  endurance: {min: 40, max: 50}
+
+  dextérité: {min: 20, max: 25}
 
   perception: {min: 15, max: 25}
 
-  knowledge: {min: 10, max: 20}
+  savoir: {min: 10, max: 20}
 
-  sanity: {min: 30, max: 40}
+  santé mentale: {min: 30, max: 40}
 
-  power: {min: 0, max: 5}
+  pouvoir: {min: 0, max: 5}
 
-  stealth: {min: 10, max: 20}
+  discrétion: {min: 10, max: 20}
 
-  charisma: {min: 15, max: 30}
+  charisme: {min: 15, max: 30}
 
-  steering: {min: 10, max: 15}
+  pilotage: {min: 10, max: 15}
 
-  craft: {min: 40, max: 60}
+  artisanat: {min: 40, max: 60}
 
-  loot: {'Fourche': 60, 'Dague': 20, 'Sac de graine': 50}
+  loot: {'Fourche': 80, 'Dague': 10, 'Sac de graine': 50}
