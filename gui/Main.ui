@@ -60,30 +60,30 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout">
               <item>
-               <widget class="QCheckBox" name="PaysanBox">
+               <widget class="QRadioButton" name="PaysanButton">
                 <property name="text">
                  <string>Paysan</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="GuerrierBox">
+               <widget class="QRadioButton" name="GuerrierButton">
                 <property name="text">
                  <string>Guerrier</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="PaladinBox">
+               <widget class="QRadioButton" name="MarchandButton">
                 <property name="text">
-                 <string>Paladin</string>
+                 <string>Marchand</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="MarchandBox">
+               <widget class="QRadioButton" name="TamerButton">
                 <property name="text">
-                 <string>Marchand</string>
+                 <string>Tamer</string>
                 </property>
                </widget>
               </item>

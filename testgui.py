@@ -69,7 +69,7 @@ class MainGUI(Main.Ui_MainWindow, QtWidgets.QMainWindow):
 
     def CreatePNJ(self):
         #Créer le PNJ et le garde dans self.PNJs sous forme de dictionnaire
-        if self.PaysanBox.isChecked():
+        if self.PaysanButton.isChecked():
             paysan = pnj.Pnj('Paysan')
             self.PNJs[paysan.name] = paysan
             self.PNJList.addItem(paysan.name)
