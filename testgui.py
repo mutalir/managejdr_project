@@ -1,6 +1,7 @@
 from gui import Main, caracs
 from pnj import pnj
 from PyQt5 import QtCore, QtGui, QtWidgets
+import breeze_resources
 
 class StatsTableModel(QtCore.QAbstractTableModel):
     #Permet de donner la forme du tableau et comment il doit être rempli.
@@ -23,11 +24,11 @@ class StatsTableModel(QtCore.QAbstractTableModel):
         if role == QtCore.Qt.TextAlignmentRole:
             return QtCore.Qt.AlignVCenter + QtCore.Qt.AlignHCenter
 
-        if role == QtCore.Qt.BackgroundRole:
-            return QtGui.QColor('black')
-
-        if role == QtCore.Qt.ForegroundRole:
-            return QtGui.QColor('orange')
+        # if role == QtCore.Qt.BackgroundRole:
+        #     return QtGui.QColor('black')
+        #
+        # if role == QtCore.Qt.ForegroundRole:
+        #     return QtGui.QColor('orange')
 
     def headerData(self, section, orientation, role):
         # section is the index of the column/row.
@@ -84,10 +85,11 @@ if __name__ ==  '__main__':
     app = QtWidgets.QApplication([])
     qt_app = MainGUI()
     qt_app.show()
+    qt_app.setAttribute(QtCore.Qt.WA_StyledBackground)
     # set stylesheet
     file = QtCore.QFile(":/dark.qss")
     file.open(QtCore.QFile.ReadOnly | QtCore.QFile.Text)
     stream = QtCore.QTextStream(file)
     app.setStyleSheet(stream.readAll())
-    app.setStyle("fusion")
+    app.setStyle("plastique")
     app.exec_()
